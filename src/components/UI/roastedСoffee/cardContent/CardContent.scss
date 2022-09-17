@@ -1,0 +1,66 @@
+@import '../../../../styles/mixins/MyMixin.scss';
+
+.card {
+    &__content {
+        margin-top: 66px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        &-body {
+            max-width: 90px;
+            width: 100%;
+        }
+
+        &-special {
+            position: absolute;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 15px;
+            color: #F9B300;
+            top: -55px;
+        }
+    }
+}
+
+.rating {
+    &-stars {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 6px;
+    }
+
+    .account {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        h4 {
+            @include title4();
+        }
+
+        span {
+            @include text5();
+            color: #5B5B5B;
+            margin-left: 4px;
+        }
+    }
+
+}
+
+.coffee {
+    @include dispFlex();
+    margin-bottom: 25px;
+}
+
+
+.cardItem {
+    display: flex;
+    justify-content: space-between;
+
+    &__inner p {
+        @include text4();
+        margin-top: 12px;
+        margin-bottom: 6px;
+    }
+}

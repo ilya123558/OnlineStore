@@ -1,0 +1,174 @@
+.mainInfo {
+    width: 500px;
+    margin-left: 112px;
+    position: relative;
+}
+
+.ulInner {
+    ul {
+        display: flex;
+        margin-bottom: 16px;
+
+        li {
+            margin: 0;
+            margin-right: 7px;
+        }
+    }
+}
+
+.title {
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 35px;
+    color: #222222;
+}
+
+.subtitle {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #222222;
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
+.description {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: #222222;
+    width: 461px;
+    margin-top: 25px;
+    margin-bottom: 29px;
+}
+
+.ratingInner {
+    display: flex;
+    align-items: center;
+}
+
+.ratingText {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    color: #222222;
+    margin-left: 15px;
+}
+
+.reviews {
+    margin-left: 15px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-decoration-line: underline;
+    color: #5B5B5B;
+}
+
+.items {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 55px;
+}
+
+.item {
+    p {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: #222222;
+    }
+
+    svg {
+        margin-right: 4px;
+    }
+}
+
+.toggle {
+    width: 18px;
+    height: 18px;
+    background: #E4E4E4;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.activeToggle {
+    background: #F9B300;
+}
+
+.priceListInner {
+    display: flex;
+}
+
+.priceItemInner {
+    display: flex;
+    align-items: center;
+    margin-right: 44px;
+
+    div {
+        margin-right: 15px;
+    }
+}
+
+.num {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0px 11px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: #222222;
+}
+
+.anVisible {
+    cursor: auto;
+    color: #C9C9C9;
+}
+
+.amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F6F6F6;
+    border: 1px solid #D6D6D6;
+    border-radius: 4px;
+    width: 184px;
+    height: 49px;
+
+    p {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 21px;
+        color: #222222;
+    }
+}
+
+.button {
+    width: 184px;
+    height: 49px;
+    border: none;
+    background: #F9B300;
+    border-radius: 4px;
+    margin-left: 15px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.payInner {
+    display: flex;
+    margin-top: 50px;
+}
+
+.special {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #F9B300;
+    position: absolute;
+    top: 50px;
+    right: 26px;
+}

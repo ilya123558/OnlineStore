@@ -1,0 +1,87 @@
+@import '../../styles/mixins/MyMixin.scss';
+
+.section-catalog__title {
+    @include title1();
+}
+
+.catalog {
+    padding-top: 62px;
+    @include dispFlex();
+
+    &__title {
+        text-align: center;
+    }
+
+    &__btn {
+        margin: 26px 0;
+        @include btnAndHover(10px 87px, #fff, var(--color-orange), none, 3px, var(--color-orange), #000);
+    }
+}
+
+.catalog__inner {
+    box-shadow: 0px 0px 21px 4px rgb(146, 146, 146);
+    border-radius: 14px;
+    max-width: 280px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    height: 381px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.5s;
+    &:hover{
+        transform: scale(1.1);
+    }
+    &-img {
+        display: flex;
+        align-items: center;
+        max-height: 178px + 42px;
+        height: 100%;
+    }
+
+    &-img_hover{
+        animation: Hover .5s ease forwards;
+    }
+
+    &-img_unHover{
+        animation: unHover .5s ease forwards;
+    }
+}
+
+.section-catalog{
+    position: relative;
+    &__vector2, &__cafe{
+        position: absolute;
+    }
+
+    &__vector2{
+        top: -23px;
+    }
+
+    &__cafe{
+        bottom: -345px;
+        z-index: 2;
+    }
+}
+
+
+@keyframes Hover {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-25px);
+    }
+}
+
+@keyframes unHover {
+    0%{
+        transform: translateY(-25px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}

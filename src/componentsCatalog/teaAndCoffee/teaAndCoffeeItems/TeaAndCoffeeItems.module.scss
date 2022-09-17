@@ -1,0 +1,20 @@
+.section {
+    background: #E5E5E5;
+    padding: 170px 0 50px;
+    position: relative;
+    top: -50px
+}
+
+.inner {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px 0px;
+
+}
+
+.sortInner{
+    position: absolute;
+    top: 95px;
+    z-index: 3;
+}

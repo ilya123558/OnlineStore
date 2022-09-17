@@ -1,0 +1,60 @@
+.section {
+    position: relative;
+}
+
+.inner {
+    background-color: #F9B300;
+    padding-top: 150px;
+
+
+    h1 {
+        font-weight: 900;
+        font-size: 50px;
+        line-height: 62px;
+        color: #FFFFFF;
+        padding-bottom: 125px;
+    }
+}
+
+.text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+    margin-bottom: 100px;
+
+    span {
+        position: relative;
+        padding: 0 11px;
+
+        &::after,
+        &::before {
+            position: absolute;
+            content: '';
+            background-color: #fff;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+        }
+
+        &::before {
+            left: 4px;
+            top: 6px
+        }
+
+        &::after {
+            right: 4px;
+            top: 6px;
+        }
+    }
+}
+
+.bg {
+    position: relative;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+}

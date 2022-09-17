@@ -1,0 +1,66 @@
+.sortInner {
+    position: absolute;
+}
+
+.sortInner *{
+    z-index: 4;
+}
+
+.sortActiveValue {
+    text-decoration-line: none;
+    color: #F9B300;
+    display: block;
+    width: 220px;
+    background: #FFFFFF;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #000000;
+    border-bottom: 1px solid #E9E9E9;
+    padding: 20px 30px;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+
+}
+
+.sortValue {
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: right;
+    text-decoration-line: underline;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.sortItem {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    cursor: pointer;
+    padding: 8px 30px 8px;
+    transition: all 0.3s;
+    &:hover {
+        color: #F9B300;
+        background-color: #FCFCFC;
+    }
+
+}
+
+.sortItemActive {
+    background-color: #FCFCFC;
+}
+
+.sortItemsList {
+    width: 220px;
+    background-color: #fff;
+    border-radius: 0px 0px 5px 5px;
+    border: 1px solid #000000;
+    border-top: none;
+}

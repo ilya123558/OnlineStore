@@ -1,0 +1,81 @@
+
+header{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	background-color: #fff;
+	z-index: 10;
+	box-shadow: 0px 5px 20px rgba(157, 157, 157, 0.25);
+}
+
+.header__inner {
+	display: flex;
+	align-items: center;
+	position: relative;
+	.logo__inner {
+		margin-right: 212px;
+	}
+}
+
+.header__profile-items {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	right: 0;
+	position: absolute;
+
+	.header__profile-item {
+		padding-left: 40px;
+		width: 22px;
+		height: 22px;
+		cursor: pointer;
+	}
+}
+
+.header__serch,
+.header__basket,
+.header__profile {
+	background: var(--background-ptofile);
+}
+
+.serch,
+.profile,
+.basket {
+	cursor: pointer;
+	path {
+		transition: all, 0.3s linear;
+	}
+}
+
+.header__profile-wrapper {
+	stroke: #000;
+	margin-left: 40px;
+	transition: all .3s;
+
+	&:hover {
+		stroke: red;
+		transform: scale(1.1);
+	}
+}
+
+.serch-active {
+	position: relative;
+	animation: serch 0.2s linear forwards;
+	z-index: 2;
+	background: #FFFFFF 30px center no-repeat;
+	box-shadow: 0px 0px 20px rgba(157, 157, 157, 0.25);
+	border: none;
+	border-radius: 30px;
+	height: 42px;
+	padding: 10px 72px;
+}
+
+@keyframes serch {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 780px;
+	}
+}

@@ -1,0 +1,19 @@
+.card__select {
+    position: absolute;
+    right: 25px;
+
+    &-nav {
+        width: 93px;
+        height: 23px;
+        background: #FFF7E1;
+        border: 1px solid #F9B300;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        color: #000000;
+        text-align: center;
+        padding: 2px 19px;
+    }
+
+}

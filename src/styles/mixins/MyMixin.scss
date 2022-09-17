@@ -1,0 +1,124 @@
+@mixin dispFlex() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin btn($padding, $color, $background-color, $border, $border-radius) {
+    padding: $padding;
+    background-color: $background-color;
+    color: $color;
+    border: $border;
+    border-radius: $border-radius;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+@mixin btnAndHover($padding, $color, $background-color, $border, $border-radius, $bgc-hover, $color-hover) {
+    padding: $padding;
+    background-color: $background-color;
+    color: $color;
+    text-shadow: 10xp 10px $color;
+    border: $border;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: all .5s;
+    &:hover {
+        background-color: $bgc-hover;
+        color: $color-hover;
+        animation: btn 2s;
+
+    }
+}
+
+@mixin title1() {
+    font-weight: 900;
+    font-size: 35px;
+    line-height: 44px;
+}
+
+@mixin title2() {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 130%;
+}
+
+@mixin title3() {
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 25px;
+}
+
+@mixin title4() {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+@mixin title5() {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+@mixin text() {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+}
+
+@mixin text2() {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+}
+
+@mixin text3() {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+@mixin text4() {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+@mixin text5() {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+
+@mixin circle {
+    background: #F9B300;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@keyframes btn {
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.05);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+
+// для подкоючения @include circle()

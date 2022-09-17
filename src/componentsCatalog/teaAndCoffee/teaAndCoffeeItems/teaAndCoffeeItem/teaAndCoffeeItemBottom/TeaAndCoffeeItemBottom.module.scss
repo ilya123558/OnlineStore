@@ -1,0 +1,25 @@
+.bottomContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priceTitle {
+    position: relative;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    color: #222222;
+}
+
+.priceTitleDiscount {
+    position: absolute;
+    top: -20px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    text-decoration-line: line-through;
+    color: #C6C6C6;
+}

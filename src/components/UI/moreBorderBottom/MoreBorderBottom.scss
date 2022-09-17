@@ -1,0 +1,14 @@
+@import '../../../styles/mixins/MyMixin.scss';
+
+.MoreBorderBottom{
+    @include text();
+    border-bottom: 1px solid #000;
+    display: inline-block;
+    cursor: pointer;
+    transition: all .3s;
+    &:hover{
+        color: var(--color-orange);
+        border-color: var(--color-orange);
+        transform: scale(1.1);
+    }
+}

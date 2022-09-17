@@ -1,0 +1,28 @@
+.coffee{
+    position: relative;
+
+    .coffee-cafe, .coffee-coffee{
+        position: absolute;
+        z-index: 2;
+        right: 0;
+
+    }
+
+    .coffee-coffee2{
+        position: absolute;
+        z-index: 2;
+        right: 90px;
+        top: -35px;
+
+    }
+
+    &-cafe{
+        top: -113px
+    }
+
+    &-coffee{
+        top: 28px - 113px;
+    }
+
+}
+

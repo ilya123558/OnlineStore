@@ -1,0 +1,59 @@
+.footer-title {
+	font-weight: 900;
+	font-size: var(--fontSize-title);
+	line-height: var(--lineHeight-title);
+}
+
+.footer-text {
+	max-width: 536px;
+	font-weight: 500;
+	font-size: var(--fontSize-text);
+	line-height: var(--lineHeight-text);
+	margin: 39px 0;
+}
+
+.footer-subscribe {
+	position: relative;
+	max-width: 739px;
+	&__input {
+		padding: 17px 40px;
+		font-size: var(--fontSize-text);
+		line-height: var(--lineHeight-text);
+		background: #F3F3F3;
+		border-radius: 28px;
+		border: none;
+		max-width: 739px;
+		width: 100%;
+	
+	}
+}
+
+.footer-subscribe__btn {
+	&:hover{
+		color: #000;
+	}
+	color: white;
+	background: var(--color-orange);
+	border-radius: 28px;
+	border: none;
+	padding: 15px 34px;
+	font-weight: 700;
+	position: absolute;
+	right: 0;
+	cursor: pointer;
+	transition: all 1s;
+	
+
+}
+
+.footer-agreed {
+	font-size: 12px;
+	line-height: 15.6px;
+	color: --color-grey;
+	margin-top: 15px;
+
+	span {
+		color: var(--color-orange);
+		cursor: pointer;
+	}
+}

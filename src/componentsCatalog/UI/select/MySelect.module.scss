@@ -1,0 +1,66 @@
+.selectInner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #FFF7E1;
+    border: 0.7px solid #F9B300;
+    border-radius: 4px;
+    width: 73px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #000000;
+    height: 16px;
+    z-index: 1;
+
+    &.selectInnerActive {
+        border-radius: 4px 4px 0 0;
+    }
+}
+
+.selectValue {
+    cursor: pointer;
+    position: relative;
+    left: -7px;
+}
+
+.selectItems {
+    position: absolute;
+    top: 14px;
+    width: 73px;
+    left: -0.7px;
+    border-radius: 4px;
+    border-top: none;
+
+    &.selectItemsActive {
+        border: 0.7px solid #F9B300;
+        border-radius: 0 0 4px 4px;
+    }
+
+    .selectItem {
+        margin: 0;
+        cursor: pointer;
+        transition: all 0.3s;
+        background: #FFF7E1;
+        border-radius: 0 0 4px 4px;
+
+        &:hover {
+            background-color: #F9B300;
+            border-radius: 0px;
+        }
+    }
+}
+
+
+
+.selectValueInner {
+    position: relative;
+
+    svg {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        cursor: pointer;
+    }
+}

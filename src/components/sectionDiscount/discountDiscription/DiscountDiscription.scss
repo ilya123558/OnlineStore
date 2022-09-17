@@ -1,0 +1,22 @@
+@import '../../../styles/mixins/MyMixin.scss';
+
+.section-discount{
+    &__title{
+        margin-bottom: 39px;
+        @include title1();
+    }
+
+    &__text{
+        @include text();
+        margin-bottom: 34px;
+    }
+    &__description{
+        text-align: end;
+        display: flex;
+        justify-content: flex-end;
+    
+        &-inner{
+            max-width: 734px;
+        }
+    }
+}

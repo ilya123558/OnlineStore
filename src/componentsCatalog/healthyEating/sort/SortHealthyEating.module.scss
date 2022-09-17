@@ -1,0 +1,19 @@
+.sortItems {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px 0px;
+    grid-template-areas:
+        ". . . "
+        ". . .";
+}
+
+.healthyEating {
+    position: absolute;
+    z-index: 1;
+    right: 0px;
+    top: -30px;
+}
+
+.inner{
+    position: relative;
+}

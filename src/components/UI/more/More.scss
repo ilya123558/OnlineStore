@@ -1,0 +1,17 @@
+@import '../../../styles/mixins/MyMixin.scss';
+
+.more {
+    color: var(--color-orange);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    @include text3();
+    transition: all .3s;
+    &:hover{
+        transform: scale(1.1) translateX(10px);
+    }
+
+    p {
+        margin-right: 8px;
+    }
+}

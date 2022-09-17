@@ -1,0 +1,33 @@
+@import '../../styles/mixins/MyMixin.scss';
+
+.section-top {
+    margin: 200px 0 201px;
+
+    &__content {
+        max-width: 466px;
+    }
+
+    &__title {
+        font-weight: 900;
+        font-size: 56px;
+        line-height: 70px;
+    }
+
+    &__text {
+        @include text();
+        margin: 41px 0 58px;
+        span{
+            font-weight: 900;
+        }
+    }
+}
+
+.vector {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.section-top__btn {
+    @include btnAndHover(15px 40px, #fff, #F9B300, none, 3.5px, #F9B300, #000)
+}

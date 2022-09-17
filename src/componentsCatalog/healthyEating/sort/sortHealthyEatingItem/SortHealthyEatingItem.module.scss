@@ -1,0 +1,27 @@
+.item {
+    width: 380px;
+    height: 225px;
+    background: #FFFFFF;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    z-index: 3;
+    box-shadow: 0px 0px 20px rgb(201, 201, 201);
+    padding: 15px 50px;
+    p{
+        margin-left: 20px;
+        max-width: 180px;
+    }
+}
+
+.item{
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover{
+        transform: scale(1.07);
+    }
+}

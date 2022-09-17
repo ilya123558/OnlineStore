@@ -1,0 +1,43 @@
+.section {
+    padding-top: 110px;
+    background-color: #FFF7E1;
+    padding-bottom: 563px;
+    position: relative;
+    margin-bottom: 200px;
+}
+
+span {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #222222;
+    margin-right: 10px;
+}
+
+.span {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: #222222;
+        top: 6px;
+        right: -6px;
+    }
+}
+
+.titleInner{
+    padding-top: 30px;
+}
+
+.bg{
+    position: absolute;
+    background-repeat: no-repeat;
+    height: 204px;
+    width: 100%;
+    bottom: -203px;
+    background-size: cover;
+}

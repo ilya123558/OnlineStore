@@ -1,0 +1,23 @@
+.items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 25px 0px;
+}
+
+.section {
+    background: #E5E5E5;
+    padding: 85px 0 50px;
+    position: relative;
+    top: -50px
+}
+
+.sortInner {
+    position: absolute;
+    top: 95px;
+    z-index: 10;
+}
+
+.inner{
+    padding-top: 85px;
+}

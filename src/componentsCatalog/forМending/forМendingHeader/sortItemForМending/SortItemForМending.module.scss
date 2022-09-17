@@ -1,0 +1,23 @@
+.item {
+    width: 280px;
+    height: 224px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 21.2552px rgba(149, 149, 149, 0.25);
+    border-radius: 14.1702px;
+    padding: 15px 23px;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 1;
+    &:hover {
+        transform: scale(1.07);
+    }
+}
+
+.title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+    padding-top: 25px;
+}

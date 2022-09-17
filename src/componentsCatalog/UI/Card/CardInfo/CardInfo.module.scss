@@ -1,0 +1,21 @@
+.inner {
+    position: absolute;
+    top: 33px;
+    height: 682px;
+    border: 1px solid #E4E4E4;
+    border-radius: 14px;
+    box-shadow: 0px 0px 35.4254px rgba(163, 163, 163, 0.25);
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 47px 144px 94px 94px;
+}
+
+.imgInner {
+    width: 294px;
+
+    .img {
+        width: 100%;
+    }
+}

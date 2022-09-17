@@ -1,0 +1,139 @@
+.productName {
+    left: 157px;
+    position: absolute;
+
+}
+
+.price {
+    left: 500px;
+    position: absolute;
+
+}
+
+.amount {
+    left: 600px;
+    position: absolute;
+
+}
+
+.discount {
+    left: 761px;
+    position: absolute;
+
+}
+
+.result {
+    left: 893px;
+    position: absolute;
+
+}
+
+
+.basketItem {
+    position: relative;
+    background: #FCFCFC;
+    border: 0.7px solid #F0F0F0;
+    border-radius: 14px;
+    height: 122px;
+    margin-top: 30px;
+
+}
+
+.deleteSvg {
+    position: absolute;
+    top: 50px;
+    left: 43px;
+    cursor: pointer;
+}
+
+.productNameInner {
+    display: flex;
+    align-items: center;
+}
+
+.productImg {
+    max-height: 80px;
+    height: 100%;
+    margin-top: 18px;
+}
+
+.productDisc {
+    padding-left: 25px;
+
+    .productTitle {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        color: #222222;
+        margin: 21px 0px 8px;
+    }
+
+    .productSubtitle,
+    .productWeigt {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        margin: 8px 0px;
+        color: #222222;
+    }
+}
+
+.productPrice {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #222222;
+    top: 45px;
+}
+
+.productAmount {
+    top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F6F6F6;
+    border: 1px solid #D6D6D6;
+    border-radius: 4px;
+    width: 109px;
+    height: 35px;
+
+    p {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #222222;
+    }
+}
+
+.num {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0px 11px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: #222222;
+}
+
+.anVisible {
+    cursor: auto;
+    color: #C9C9C9;
+}
+
+.productDiscount {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #222222;
+    top: 45px;
+}
+
+.productResult {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #222222;
+    top: 45px;
+}

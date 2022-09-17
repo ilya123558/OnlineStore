@@ -1,0 +1,83 @@
+.header {
+    padding-top: 146px;
+    background: linear-gradient(0deg, #F9B300, #F9B300);
+}
+
+.path {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+
+    span {
+        margin: 0 11px;
+        position: relative;
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            background-color: #fff;
+            height: 3px;
+            width: 3px;
+            border-radius: 50%;
+            top: 50%;
+        }
+
+        &::after {
+            right: -9px;
+        }
+
+        &::before {
+            left: -9px;
+        }
+    }
+}
+
+.title {
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 62px;
+    color: #FFFFFF;
+    margin-top: 100px;
+    padding-bottom: 100px;
+}
+
+.cupAndCoffee {
+    position: absolute;
+    right: 0;
+
+    div {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .cup {
+        position: relative;
+        width: 488px;
+        height: 322px;
+        top: -70px;
+        right: 80px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .coffee {
+        position: relative;
+        right: -170px;
+        width: 328px;
+        height: 543px;
+        top: -330px;
+    }
+}
+
+.bg{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    height: 204px;
+    width: 100%;
+}

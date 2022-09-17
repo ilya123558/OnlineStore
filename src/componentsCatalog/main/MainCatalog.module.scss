@@ -1,0 +1,22 @@
+.wrapper {
+    margin-top: 200px;
+}
+
+.wrapperLinks {
+    display: flex;
+    justify-content: space-between;
+    padding: 200px 0px 100px;
+}
+
+.link {
+    transition: all 0.3s;
+    padding: 15px 25px;
+    background: #F6F6F6;
+    border: 0.7px solid #C9C9C9;
+    border-radius: 4px;
+    color: #F9B300;
+    &:hover {
+        background: #FFF7E1;
+        border: 1px solid #F9B300;
+    }
+}

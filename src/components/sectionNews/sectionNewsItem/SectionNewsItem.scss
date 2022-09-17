@@ -1,0 +1,19 @@
+@import '../../../styles/mixins/MyMixin.scss';
+
+.section-news{
+    &__content {
+        padding: 30px 55px 20px 0;
+    }
+}
+
+.news {
+
+    &__content-title {
+        @include title2();
+    }
+
+    &__content-text{
+        @include text2();
+        margin: 20px 0;
+    }
+}

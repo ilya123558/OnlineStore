@@ -1,0 +1,64 @@
+@import '../../styles/mixins/MyMixin.scss';
+
+.sectionTop_blog {
+    margin-top: 200px;
+
+    &_pages_title {
+        color: #222222;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+
+        span {
+            position: relative;
+            margin-left: 14px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                border-radius: 50%;
+                background-color: #222;
+                height: 3px;
+                width: 3px;
+                display: inline-block;
+                top: 50%;
+                left: -8px;
+            }
+        }
+    }
+
+    &_btns {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.BlogBtnActive {
+    background: #FFF7E1;
+    border: 0.7px solid #F9B300;
+    border-radius: 4px;
+    max-width: 380px;
+    width: 100%;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #F9B300;
+    cursor: pointer;
+}
+
+.BlogBtn {
+    border-radius: 4px;
+    max-width: 380px;
+    width: 100%;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #F9B300;
+    cursor: pointer;
+    padding: 10px;
+    background: #F6F6F6;
+    border: 0.7px solid #C9C9C9;
+}

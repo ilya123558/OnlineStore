@@ -1,0 +1,21 @@
+.innerTop {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reating,
+.selected {
+    display: inline-block;
+}
+
+.reatingChar {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #222222;
+    margin-top: 8px;
+}
+
+.innerForStar{
+    display: inline-block;
+}

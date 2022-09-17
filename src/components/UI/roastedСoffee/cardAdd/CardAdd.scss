@@ -1,0 +1,58 @@
+@import '../../../../styles/mixins/MyMixin.scss';
+
+.card {
+    &__add {
+        margin-top: 25px;
+    }
+
+    &__title {
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 22px;
+        color: #222222;
+    }
+
+    &__subtitle {
+        margin: 8px 0 20px;
+        max-width: 183px;
+        @include text4();
+    }
+
+    &__price {
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 30px;
+        color: #222222;
+        position: relative;
+
+        &-old {
+            position: absolute;
+            top: -23px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 21px;
+            text-align: center;
+            color: #C6C6C6;
+        }
+
+        &-active {
+            &::before {
+                content: '';
+                position: absolute;
+                border-top: 1px solid #C6C6C6;
+                top: -13px;
+                max-width: 45px;
+                width: 100%;
+            }
+        }
+
+    }
+}
+
+.card__add_inner {
+    @include dispFlex();
+}
+
+.card__price_btn {
+    @include btnAndHover(9px 33px, #fff, var(--color-orange), none, 4px, var(--color-orange), #000);
+}

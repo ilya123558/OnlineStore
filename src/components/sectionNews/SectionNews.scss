@@ -1,0 +1,45 @@
+@import '../../styles/mixins/MyMixin.scss';
+
+.section-news {
+    margin-top: 137px;
+    position: relative;
+
+    &__top {
+        @include dispFlex();
+        margin-bottom: 44px
+    }
+
+    &__title {
+        @include title1();
+    }
+
+    &__items {
+        @include dispFlex();
+        margin-bottom: 20px;
+    }
+
+    &__bg,
+    &__bg2,
+    &__bg3{
+        width: 100%;
+        position: absolute;
+        background: 100%/cover no-repeat;
+        z-index: -2;
+    }
+
+    &__bg{
+        top: 100px;
+        height: 211px;
+    }
+
+    &__bg2{
+        top: 311px;
+        height: 400px;
+    }
+
+    &__bg3{
+        top: 711px;
+        height: 211px;
+        transform: rotate(180deg);
+    }
+}
