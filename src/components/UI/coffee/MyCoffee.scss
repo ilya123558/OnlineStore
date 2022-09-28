@@ -1,28 +1,42 @@
-.coffee{
+.coffee {
     position: relative;
 
-    .coffee-cafe, .coffee-coffee{
+    .coffee-cafe,
+    .coffee-coffee {
         position: absolute;
         z-index: 2;
         right: 0;
-
+        // animation: spin 5s linear 0s infinite;
     }
 
-    .coffee-coffee2{
+    .coffee-coffee2 {
         position: absolute;
         z-index: 2;
         right: 90px;
         top: -35px;
-
     }
 
-    &-cafe{
+    &-cafe {
         top: -113px
     }
 
-    &-coffee{
+    &-coffee {
         top: 28px - 113px;
     }
 
 }
 
+.coffee-coffee, .coffee-coffee2 {
+    animation: spin 20s linear 0s infinite;
+
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

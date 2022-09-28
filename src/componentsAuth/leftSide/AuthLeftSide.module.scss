@@ -1,0 +1,54 @@
+.leftSide {
+    width: 420px;
+    height: 100%;
+    background: #F9B300;
+    border-radius: 21px 0px 0px 21px;
+}
+
+.coffee,
+.cup {
+    position: absolute;
+    width: 100%
+}
+
+.cup {
+    top: -10px;
+}
+
+.coffee {
+    left: -10px;
+}
+
+.title {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 30px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.btn {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    transition: all .5s;
+
+    &:hover {
+        color: black;
+    }
+}
+
+.textInner {
+    margin-top: 301px;
+    width: 100%;
+    text-align: center;
+}
+
+.imgInner {
+    position: absolute;
+    width: 390px;
+}

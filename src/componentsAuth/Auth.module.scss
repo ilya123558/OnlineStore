@@ -1,0 +1,27 @@
+.auth {
+    width: 977px;
+    height: 525px;
+    border-radius: 21px;
+    position: fixed;
+    z-index: 40;
+    margin: auto auto;
+    top: 172px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+}
+
+.profileAuth {
+    width: 100vw;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0.5;
+    position: fixed;
+    z-index: 30;
+}
+
+.authInner {
+    background-color: #fff;
+}
+
+

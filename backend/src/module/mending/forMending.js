@@ -1,68 +1,16 @@
-const allDataForMending = [
-    {
-        num: 3,
-        reviews: 21,
-        title: 'Colombia Supremo',
-        typeProduct: 'Гранулированный кофе',
-        id: 1,
-        listOptions: [
-            { title: '250', price: 250 },
-            { title: '500', price: 400 },
-            { title: '1000', price: 850 },
-        ],
-        activeListOptions: 0,
-        imgSrc: '/images/catalog/forМending/image.png',
-        imgFull: '/images/catalog/forМending/imageFull.png',
-        description: 'Компания Нью Рефайнинг Груп находится в г. Калининграде и имеет свой склад и представительство в Москве.Завод работает на рынке свежеобжаренного кофе и растворимой продукции более 15 лет.Завод имеет немецкое оборудование марки Probat по обжарке кофе и итальянские агломераторы для производства растворимой продукции.',
-    },
-    {
-        num: 3,
-        reviews: 21,
-        title: 'Colombia Supremo',
-        typeProduct: 'Гранулированный кофе',
-        id: 2,
-        listOptions: [
-            { title: '250', price: 150 },
-            { title: '500', price: 400 },
-            { title: '1000', price: 850 },
-        ],
-        activeListOptions: 0,
-        imgSrc: '/images/catalog/forМending/image.png',
-        imgFull: '/images/catalog/forМending/imageFull.png',
-        description: 'Компания Нью Рефайнинг Груп находится в г. Калининграде и имеет свой склад и представительство в Москве.Завод работает на рынке свежеобжаренного кофе и растворимой продукции более 15 лет.Завод имеет немецкое оборудование марки Probat по обжарке кофе и итальянские агломераторы для производства растворимой продукции.',
-    },
-    {
-        num: 3,
-        reviews: 21,
-        title: 'Colombia Supremo',
-        typeProduct: 'Гранулированный кофе',
-        id: 3,
-        listOptions: [
-            { title: '250', price: 200 },
-            { title: '500', price: 400 },
-            { title: '1000', price: 850 },
-        ],
-        activeListOptions: 0,
-        imgSrc: '/images/catalog/forМending/image.png',
-        imgFull: '/images/catalog/forМending/imageFull.png',
-        description: 'Компания Нью Рефайнинг Груп находится в г. Калининграде и имеет свой склад и представительство в Москве.Завод работает на рынке свежеобжаренного кофе и растворимой продукции более 15 лет.Завод имеет немецкое оборудование марки Probat по обжарке кофе и итальянские агломераторы для производства растворимой продукции.',
-    },
-    {
-        num: 3,
-        reviews: 21,
-        title: 'Colombia Supremo',
-        typeProduct: 'Гранулированный кофе',
-        id: 4,
-        listOptions: [
-            { title: '250', price: 100 },
-            { title: '500', price: 400 },
-            { title: '1000', price: 850 },
-        ],
-        activeListOptions: 0,
-        imgSrc: '/images/catalog/forМending/image.png',
-        imgFull: '/images/catalog/forМending/imageFull.png',
-        description: 'Компания Нью Рефайнинг Груп находится в г. Калининграде и имеет свой склад и представительство в Москве.Завод работает на рынке свежеобжаренного кофе и растворимой продукции более 15 лет.Завод имеет немецкое оборудование марки Probat по обжарке кофе и итальянские агломераторы для производства растворимой продукции.',
-    },
-]
+const {Router} = require('express')
+const forMendingRouter = Router()
+const enumItems = require('./enums/forMending')
+const forMendingService = require('./forMending.service')
 
-module.exports = { allDataForMending }
+forMendingRouter.get('/all', async(req, res) => {
+    const forMendingAll = await forMendingService.get()
+    res.json(forMendingAll)
+})
+
+forMendingRouter.get('/:id', async (req, res) => {
+    const forMendingItem = await forMendingService.getItem(req.params.id)
+    res.json({...forMendingItem._doc, typePage: enumItems.typePage})
+})
+
+module.exports = forMendingRouter

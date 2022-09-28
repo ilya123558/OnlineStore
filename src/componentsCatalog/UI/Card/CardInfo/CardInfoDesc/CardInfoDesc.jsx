@@ -4,7 +4,7 @@ import findCoffee from '../../../../../utils/findCofee';
 import findRating from '../../../../../utils/findRating'
 import findLvl from '../../../../../utils/findLvl';
 import { useState } from 'react';
-import { setValueBasket } from '../../../../../redux/basket/basket';
+import { fetchSetValueBasket } from '../../../../../redux/basket/basket';
 import { useDispatch } from 'react-redux';
 
 const CardInfoDesc = (props) => {
@@ -33,18 +33,17 @@ const CardInfoDesc = (props) => {
         }
     }
 
-    const onClickPayHandler = () => {
-        dispatch(setValueBasket({ ...props, activeIndex, amount }))
+    const onClickPayHandler = async() => {
+        dispatch(fetchSetValueBasket({ ...props, activeIndex, amount }))
         const basket = document.querySelector('.basket')
         basket.style.fill = '#F9B300'
         basket.style.stroke = '#F9B300'
-        // transparent
+
         setTimeout(() => {
             basket.style.fill = 'transparent'
             basket.style.stroke = 'current'
         }, 400)
 
-        
     }
 
 
