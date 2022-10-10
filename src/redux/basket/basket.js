@@ -5,8 +5,29 @@ export const fetchBasket = createAsyncThunk(
     'users/fetchBasket',
     async () => {
         try {
-            const response = await fetch(`http://localhost:5000/api/basket`)
-            const data = await response.json()
+            const response = await axios.get(`http://localhost:5000/api/basket?userId=${localStorage.getItem('userId')}`)
+            const data = await response.data
+            return data
+
+        } catch (error) {
+            return new Error(error.message)
+        }
+
+    }
+)
+
+export const fetchBasketAllPrice = createAsyncThunk(
+    'users/fetchBasketAllPrice',
+    async () => {
+        try {
+            const response = await axios({
+                method: 'GET',
+                url: 'http://localhost:5000/api/basket/all-price',
+                params: {
+                    userId: localStorage.getItem('userId'),
+                }
+            })
+            const data = await response.data
             return data
 
         } catch (error) {
@@ -22,7 +43,10 @@ export const fetchRemoveBasket = createAsyncThunk(
         try {
             await axios({
                 method: 'DELETE',
-                url: 'http://localhost:5000/api/basket/all'
+                url: 'http://localhost:5000/api/basket/all',
+                params: {
+                    userId: localStorage.getItem('userId'),
+                }
             })
             return []
 
@@ -38,19 +62,22 @@ export const fetchSetValueBasket = createAsyncThunk(
     'users/fetchSetValueBasket',
     async (props) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/basket`)
+            const response = await fetch(`http://localhost:5000/api/basket?userId=${localStorage.getItem('userId')}`)
             const basketList = await response.json()
 
             if (basketList.filter(elem => elem.id === props.id
                 &&
                 elem.typePage === props.typePage
                 &&
-                elem.price === props.listOptions[props.activeIndex].price).length > 0) {
+                elem.price === props.listOptions[props.activeIndex].price
+                &&
+                elem.userId === localStorage.getItem('userId')).length > 0) {
                 await axios({
                     method: 'PUT',
                     url: 'http://localhost:5000/api/basket',
                     params: {
                         id: props.id,
+                        userId: localStorage.getItem('userId'),
                         typePage: props.typePage,
                         grammar: props.listOptions[props.activeIndex].optionValue || props.listOptions[props.activeIndex].title,
                         amount: props.amount,
@@ -64,6 +91,7 @@ export const fetchSetValueBasket = createAsyncThunk(
                     url: 'http://localhost:5000/api/basket',
                     params: {
                         id: props.id,
+                        userId: localStorage.getItem('userId'),
                         typePage: props.typePage,
                         imgSrc: props.imgSrc,
                         title: props.title,
@@ -85,12 +113,15 @@ export const fetchSetValueBasket = createAsyncThunk(
 
 export const fetchDeleteItemBasket = createAsyncThunk(
     'users/fetchDeleteItemBasket',
-    async (id) => {
+    async (_id) => {
         try {
             await axios({
                 method: 'DELETE',
                 url: 'http://localhost:5000/api/basket/',
-                params: { id }
+                params: {
+                    _id: _id,
+                    userId: localStorage.getItem('userId')
+                }
             })
 
         } catch (error) {
@@ -110,6 +141,7 @@ export const fetchSetAmountBasket = createAsyncThunk(
                 params: {
                     _id: props._id,
                     amount: props.amount,
+                    userId: localStorage.getItem('userId')
                 }
             })
 
@@ -125,7 +157,8 @@ export const fetchSetAmountBasket = createAsyncThunk(
 const initialState = {
     basketList: [],
     error: '',
-    status: ''
+    status: '',
+    basketPriceAll: {}
 }
 
 const basketSlice = createSlice({
@@ -147,7 +180,6 @@ const basketSlice = createSlice({
 
     },
     extraReducers: {
-        //fetchBasket
         [fetchBasket.pending]: (state) => {
             state.status = 'loading'
         },
@@ -158,7 +190,6 @@ const basketSlice = createSlice({
         [fetchBasket.rejected]: (state, action) => {
             state.error = action.payload
         },
-        //fetchRemoveBasket
         [fetchRemoveBasket.pending]: (state) => {
             state.status = 'loading'
         },
@@ -169,7 +200,6 @@ const basketSlice = createSlice({
         [fetchRemoveBasket.rejected]: (state, action) => {
             state.error = action.payload
         },
-        //fetchSetValueBasket
         [fetchSetValueBasket.pending]: (state) => {
             state.status = 'loading'
         },
@@ -178,6 +208,16 @@ const basketSlice = createSlice({
             state.basketList = action.payload
         },
         [fetchSetValueBasket.rejected]: (state, action) => {
+            state.error = action.payload
+        },
+        [fetchBasketAllPrice.pending]: (state) => {
+            state.status = 'loading'
+        },
+        [fetchBasketAllPrice.fulfilled]: (state, action) => {
+            state.status = 'resolve'
+            state.basketPriceAll = action.payload
+        },
+        [fetchBasketAllPrice.rejected]: (state, action) => {
             state.error = action.payload
         },
     }

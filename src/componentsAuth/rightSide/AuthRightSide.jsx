@@ -1,22 +1,31 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import s from './AuthRightSide.module.scss'
-import logo from '../../images/auth/logo.png'
-import MyInput from '../UI/MyInput/MyInput';
+import Login from './login/Login';
+import NewPassword from './newPassword/NewPassword';
+import Password from './password/Password';
+import Registration from './registration/Registration';
 
-const AuthRightSide = () => {
+
+const AuthRightSide = ({setProfileAuth}) => {
+
+    const typeAuth = useSelector(state => state.auth.typeAuth)
+
     return (
         <div className={s.rightSide}>
             <div className={s.inner}>
-
-                <div className={s.authReg}>
-                    <img src={logo} alt="logo" />
-                    <h3 className={s.title}>Регистрация</h3>
-                    <p className={s.subtitle}>
-                        Зарегистрируйтесь на сайте, чтобы первым получать скидки и узнавать акционные предложения!
-                    </p>
-                    <MyInput placeholder={'Имя и фамилия'}/>
-                </div>
- 
+                {typeAuth === 'Registration' &&
+                    <Registration />
+                }
+                {typeAuth === 'Login' &&
+                    <Login />
+                }
+                {typeAuth === 'Password' &&
+                    <Password />
+                }
+                {typeAuth === 'NewPassword' &&
+                    <NewPassword />
+                }
             </div>
         </div>
     );

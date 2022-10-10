@@ -11,6 +11,7 @@ const TeaAndCoffee = new mongoose.Schema({
     imgSrc: String,
     imgFull: String,
     description: String,
+    typePage: String
 })
 
 module.exports = mongoose.model('teaAndCoffee', TeaAndCoffee)

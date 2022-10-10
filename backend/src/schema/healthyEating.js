@@ -10,6 +10,7 @@ const HealthyEating = new mongoose.Schema(        {
     activeListOptions: Number,
     imgSrc : String,
     imgFull: String,
+    typePage: String
 
 })
 

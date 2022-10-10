@@ -11,14 +11,10 @@ const start = async () => {
     try {
         await mongoose.connect('mongodb+srv://user:00012500@onlinestore.v6sfh0r.mongodb.net/onlineStore')
 
-        app.use(cors({
-            origin: '*'
-        }))
-        
+        app.use(cors({ origin: '*' }))
         app.use(require('body-parser').urlencoded({ extended: false }))
-
+        
         app.use('/api', router)
-
 
         app.listen(PORT, () => {
             console.log(`server started in PORT ${PORT}`)

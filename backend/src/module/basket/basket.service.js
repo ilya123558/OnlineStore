@@ -2,13 +2,37 @@ const Basket = require('../../schema/basket')
 
 class BasketService {
 
-    async get() {
-        return await Basket.find()
+    async get(userId) {
+        return await Basket.find({ userId })
+    }
+
+    async getAllPrice(userId) {
+        let basketPrice = 0
+        let disc = 0
+        const basketList = await Basket.find({ userId })
+        for (let i in basketList) {
+            basketPrice += basketList[i].price * basketList[i].amount
+        }
+        if (basketPrice >= 5000){
+            disc = 10
+        }
+        if (basketPrice >= 7000){
+            disc = 15
+        }
+        if (basketPrice >= 10000){
+            disc = 20
+        }
+        
+        return {
+            sumPrice: basketPrice,
+            discount: disc
+        }
     }
 
     async post(props) {
         return Basket.create({
             id: props.id,
+            userId: props.userId,
             typePage: props.typePage,
             imgSrc: props.imgSrc,
             title: props.title,
@@ -20,22 +44,32 @@ class BasketService {
         })
     }
 
-    async put(id, typePage, grammar, amount) {
-        const item = await Basket.findOne({ id, typePage, grammar })
-        const itemUpdate = await Basket.findOneAndUpdate({ id, typePage, grammar }, { amount: Number(item.amount) + Number(amount) })
+    async put(props) {
+        const item = await Basket.findOne({
+            id: props.id,
+            typePage: props.typePage,
+            grammar: props.grammar,
+            userId: props.userId
+        })
+        const itemUpdate = await Basket.findOneAndUpdate({
+            id: props.id,
+            typePage: props.typePage,
+            grammar: props.grammar,
+            userId: props.userId
+        }, { amount: Number(item.amount) + Number(props.amount) })
         return itemUpdate
     }
 
-    async delete(_id) {
-        return await Basket.findOneAndDelete({ _id })
+    async delete(props) {
+        return await Basket.findOneAndDelete({ _id: props._id, userId: props.userId })
     }
 
-    async deleteAll() {
-        return await Basket.deleteMany()
+    async deleteAll(userId) {
+        return await Basket.deleteMany({ userId })
     }
 
-    async putAmount(_id, amount) {
-        await Basket.findOneAndUpdate({ _id }, { amount })
+    async putAmount(props) {
+        await Basket.findOneAndUpdate({ _id: props._id, userId: props.userId }, { amount: props.amount })
     }
 }
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import classes from './QuestionsPage.module.scss'
+import s from './QuestionsPage.module.scss'
 
 
 const QuestionsPage = () => {
     return (
-        <div>
-            <h1 className={classes.title}>QuestionsPage</h1> 
+        <div className={s.questionsPage}>
+            QuestionsPage 
         </div>
     );
 };

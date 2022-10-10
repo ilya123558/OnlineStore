@@ -52,3 +52,32 @@
     position: absolute;
     width: 390px;
 }
+
+.subtitle {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.regBtn {
+    border: 2px solid #FFFFFF;
+    border-radius: 5px;
+    padding: 14px 0;
+    text-align: center;
+    width: 253px;
+    background-color: #F9B300;
+    margin-top: 64px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    transition: all 0.3s;
+    cursor: pointer;
+    &:hover {
+        scale: 1.03;
+        border: none;
+        background-color: #fff;
+        color: #F9B300;
+    }
+}

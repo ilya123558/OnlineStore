@@ -9,6 +9,13 @@ import sortHealthyEating from './sort/sortHealthyEating'
 import healthyEating from './cards/healthyEating'
 import cardInner from './card/cardInner'
 import basket from './basket/basket'
+import auth from './auth/auth'
+import regestration from './auth/regestration'
+import login from './auth/login'
+import password from './auth/password'
+import newPassword from './auth/newPassword'
+import user from "./user/user" 
+import serch from './serch/serch'
 
 export const store = configureStore({
     reducer: {
@@ -21,6 +28,13 @@ export const store = configureStore({
         sortHealthyEating,
         healthyEating,
         cardInner,
-        basket
+        basket,
+        auth,
+        regestration,
+        login,
+        password,
+        newPassword,
+        user,
+        serch
     }
 })

@@ -1,0 +1,92 @@
+.inner {
+    padding: 25px 0 20px 100px;
+    display: flex;
+}
+
+.profileImage {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.editInner {
+    width: 90px;
+}
+
+.profileUserInfo {
+    margin-left: 20px;
+    position: relative;
+
+    input {
+        background: #F6F6F6;
+        border: none;
+        border-radius: 4px;
+        display: block;
+        width: 382px;
+        padding: 0;
+
+        &:focus{
+            outline: none;
+        }
+
+        &.password {
+            padding-left: 57px;
+        }
+    }
+}
+
+.name {
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 35px;
+    color: #222222;
+    margin-bottom: 7px;
+}
+
+.email,
+.phone,
+.password {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #222222;
+}
+
+.phone {
+    margin-top: 14px;
+    margin-bottom: 15px;
+}
+
+
+.password {
+    padding-left: 57px;
+}
+
+.passText {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #222222;
+    position: absolute;
+    bottom: 1px;
+}
+
+.svgItem {
+    position: absolute;
+    right: 15px;
+    bottom: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        scale: 1.05;
+
+        path {
+            stroke: #F9B300
+        }
+    }
+
+    path {
+        transition: all 0.3s;
+    }
+}

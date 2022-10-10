@@ -1,11 +1,13 @@
 import React from 'react';
 import s from './BasketContent.module.scss'
-import { setAmountBasket, fetchDeleteItemBasket, deleteValueBasket, fetchSetAmountBasket } from '../../redux/basket/basket';
-import { useDispatch } from 'react-redux';
+import { setAmountBasket, fetchDeleteItemBasket, deleteValueBasket, fetchSetAmountBasket, fetchBasketAllPrice } from '../../redux/basket/basket';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 const BasketContent = (props) => {
 
     const dispatch = useDispatch()
+    const basketPriceAll = useSelector(state => state.basket.basketPriceAll)
 
     const onClickDeleteHandler = async () => {
         await dispatch(fetchDeleteItemBasket(props._id))
@@ -13,13 +15,19 @@ const BasketContent = (props) => {
     }
 
     const setAmountHandlerPlus = async () => {
-        await dispatch(fetchSetAmountBasket({...props, amount: props.amount + 1}))
+        await dispatch(fetchSetAmountBasket({ ...props, amount: props.amount + 1 }))
         dispatch(setAmountBasket({ ...props, amount: props.amount + 1 }))
     }
     const setAmountHandler = async () => {
-        await dispatch(fetchSetAmountBasket({...props, amount: props.amount - 1}))
+        await dispatch(fetchSetAmountBasket({ ...props, amount: props.amount - 1 }))
         dispatch(setAmountBasket({ ...props, amount: props.amount - 1 }))
     }
+
+    useEffect(() => {
+        if (!basketPriceAll.discount && basketPriceAll.discount !== 0) {
+            dispatch(fetchBasketAllPrice())
+        }
+    }, [dispatch, basketPriceAll.discount])
 
     return (
         <div className={s.basketItem}>
@@ -48,9 +56,11 @@ const BasketContent = (props) => {
                     onClick={setAmountHandlerPlus}>+</button>
             </div>
 
-            <div className={[s.productDiscount, s.discount].join(' ')}>{props.disc || 0}%</div>
+            <div className={[s.productDiscount, s.discount].join(' ')}>{basketPriceAll.discount}%</div>
 
-            <div className={[s.productResult, s.result].join(' ')}>{props.price * props.amount} ₽ </div>
+            <div className={[s.productResult, s.result].join(' ')}>{
+                (props.price * props.amount) - Math.round((props.price * props.amount) * (basketPriceAll.discount / 100))
+            } ₽ </div>
         </div>
     );
 };

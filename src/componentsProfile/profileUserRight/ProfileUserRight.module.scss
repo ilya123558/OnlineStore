@@ -1,0 +1,67 @@
+.profileUserRight {
+    width: 382px;
+    background: #F9B300;
+    border-radius: 14px;
+    margin: -1px -1px 0 0;
+    padding: 0 0 30px 40px;
+    position: relative;
+}
+
+.discText {
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 27px;
+    color: #FFFFFF;
+    padding-top: 35px;
+}
+
+.allPrice {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    margin: 12px 0 30px;
+}
+
+.infoNextDisc {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+}
+
+.question {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    text-align: center;
+    top: 17px;
+    right: 17px;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        color: #fff;
+        background-color: #F9B300;
+        scale: 1.05;
+    }
+}
+
+.infoNextDiscTitle {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+    margin-top: 40px;
+    margin-bottom: 22px;
+}
+
+.infoDiscText {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+    padding-bottom: 5px;
+}

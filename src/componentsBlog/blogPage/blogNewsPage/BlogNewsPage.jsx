@@ -1,10 +1,10 @@
 import React from 'react';
-
+import s from './BlogNewsPage.module.scss'
 
 const BlogNewsPage = () => {
     return (
-        <div>
-            BlogNewsPage
+        <div className={s.blogNewsPage}>
+            Информация о новостях
         </div>
     );
 };

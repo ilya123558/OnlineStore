@@ -17,6 +17,7 @@ const RoastedCoffee = new mongoose.Schema({
         imgSrc: String,
         imgFull: String,
         description: String,
+        typePage: String
 
 })
 
